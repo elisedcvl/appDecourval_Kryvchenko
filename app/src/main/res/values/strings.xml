@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AppDecourval_Kryvchenko</string>
+    <string name="userPassword">userPassword</string>
+    <string name="email_format_error">Error  Email Adress</string>
+    <string name="email_or_password_empty">Email address and password are required</string>
+    <string name="mapKey">AIzaSyDGfdCm6ANf5J4zWONIzaaHj8JkTj3A464</string>
+</resources>
