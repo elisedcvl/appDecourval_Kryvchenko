@@ -1,7 +1,10 @@
 package com.example.elise.appdecourval_kryvchenko;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -33,11 +36,9 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        final EditText login = (EditText) findViewById(R.id.userEmail);
+       /* final EditText login = (EditText) findViewById(R.id.userEmail);
         final EditText pass = (EditText) findViewById(R.id.userPassword);
-        final Button loginButton = (Button) findViewById(R.id.connect);
-
+        final Button loginButton = (Button) findViewById(R.id.connect);*/
 
         findViewById(R.id.button_sign_in).setOnClickListener(this);
 
@@ -49,8 +50,23 @@ public class MainActivity extends AppCompatActivity
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
 
+        // Connecté a internet ?
+        ConnectivityManager cm =
+                (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        boolean isConnected = activeNetwork != null && activeNetwork.isConnectedOrConnecting();
+        //boolean isWiFi = activeNetwork.getType() == ConnectivityManager.TYPE_WIFI;
+        if ( isConnected = false) {
+        // display a message
+            Toast toast = Toast.makeText(
+                    getApplicationContext(),
+                    "No Internet connection !", Toast.LENGTH_LONG);
+            toast.show();
+        }
 
-        loginButton.setOnClickListener(new View.OnClickListener() {
+
+
+       /* loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -80,7 +96,7 @@ public class MainActivity extends AppCompatActivity
                 intent.putExtra(EXTRA_PASSWORD, pass.getText().toString());
                 startActivity(intent);
             }
-        } );
+        } );*/
 
     }
 
@@ -118,14 +134,17 @@ public class MainActivity extends AppCompatActivity
 
             Intent intent = new Intent(MainActivity.this, WelcomeActivity.class);
             startActivity(intent);
-
-
+        }
+        else {
+            Toast toast = Toast.makeText(
+                    getApplicationContext(),
+                    "Error Sign-in !", Toast.LENGTH_LONG);
+            toast.show();
         }
     }
 
     @Override
-    public void onConnectionFailed(
-            ConnectionResult connectionResult) {
+    public void onConnectionFailed(ConnectionResult connectionResult) {
     }
 
 

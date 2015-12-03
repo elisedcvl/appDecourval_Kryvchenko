@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -28,14 +29,24 @@
             android:value="@integer/google_play_services_version" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDGfdCm6ANf5J4zWONIzaaHj8JkTj3A464" />
+            android:value="AIzaSyALnTAVMC0oAfeFjIWTQeQP-ZA-erNLTpw" />
+
+        <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
 
         <activity android:name=".WelcomeActivity" />
         <activity android:name=".MapsActivity" />
         <activity android:name=".PredefinedRouteActivity" />
         <activity android:name=".FreeTrailActivity" />
         <activity android:name=".StrenghtTrainingActivity" />
-        <activity android:name=".Maps2Activity"></activity>
+        <activity android:name=".Maps2Activity" />
+        <activity android:name=".Maps3Activity" />
+        <activity android:name=".MapsDestinationActivity" />
+        <activity android:name=".MapsDestionationAdActivity" />
+        <activity
+            android:name=".MapWayActivity"
+            android:label="@string/title_activity_map_way"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".MapsDestionationHereActivity"></activity>
     </application>
 
 </manifest>

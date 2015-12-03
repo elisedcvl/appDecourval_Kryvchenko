@@ -20,7 +20,7 @@ public class WelcomeActivity extends AppCompatActivity {
         FreeTrailButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(WelcomeActivity.this, FreeTrailActivity.class);
+                Intent intent = new Intent(WelcomeActivity.this, MapsDestionationAdActivity.class);
                 startActivity(intent);
             }
         } );

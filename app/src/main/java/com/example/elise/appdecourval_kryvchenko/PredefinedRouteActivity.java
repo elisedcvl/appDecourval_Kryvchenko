@@ -29,7 +29,7 @@ public class PredefinedRouteActivity extends AppCompatActivity {
         maps2Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PredefinedRouteActivity.this, MainActivity.class);
+                Intent intent = new Intent(PredefinedRouteActivity.this, Maps3Activity.class);
                 startActivity(intent);
             }
         } );
