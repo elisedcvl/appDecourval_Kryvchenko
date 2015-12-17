@@ -45,7 +45,7 @@ public class Maps3Activity extends FragmentActivity implements OnMapReadyCallbac
         //longitudeField = (TextView) findViewById(R.id.TextView04);
 
         final Button buttonGoDestination = (Button) findViewById(R.id.buttonGoDestination);
-        final Button buttonGoDestinationArrival = (Button) findViewById(R.id.buttonGoDestinationArrival);
+        final Button buttonGoDestinationArrival = (Button) findViewById(R.id.buttonGoDestination);
         final EditText editDestination = (EditText) findViewById(R.id.editDestination);
         final CheckBox checkBoxHere = (CheckBox) findViewById(R.id.checkBoxHere);
 
@@ -82,45 +82,70 @@ public class Maps3Activity extends FragmentActivity implements OnMapReadyCallbac
         mapFragment.getMapAsync(this);
 
         // take adress
-        final String destination = editDestination.getText().toString();
+
+
 
         buttonGoDestination.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if("".equals(editDestination.getText().toString().trim())) {
+                    Toast.makeText(Maps3Activity.this, "Please enter a destination", Toast.LENGTH_SHORT).show();
+                }
+
+                if (checkBoxHere.isChecked()) {
+                    here = true;
+                    final Bundle bundle = new Bundle();
+                    bundle.putString("destination", editDestination.getText().toString());
+                    final Bundle bundleLat = new Bundle();
+                    bundleLat.putDouble("latitude", latg);
+                    final Bundle bundleLng = new Bundle();
+                    bundleLng.putDouble("longitude", lngg);
+                    final Bundle bundleHere = new Bundle();
+                    bundleHere.putBoolean("here", here);
+                    final Intent intent = new Intent(getApplicationContext(), MapWayActivity.class);
+                    intent.putExtras(bundle);
+                    intent.putExtras(bundleLat);
+                    intent.putExtras(bundleLng);
+                    intent.putExtras(bundleHere);
+                    startActivity(intent);
+                } else {
+
+                    final Bundle bundle = new Bundle();
+                    bundle.putString("destination", editDestination.getText().toString());
+                    final Intent intent = new Intent(getApplicationContext(), AddDepartActivity.class);
+                    intent.putExtras(bundle);
+                    startActivity(intent);
+                 }
+
+            }
+        });
+
+        /*buttonGoDestination.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
                 if("".equals(editDestination.getText().toString().trim())) {
                     Toast.makeText(Maps3Activity.this, "Please enter a destination", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    final String destination = editDestination.getText().toString();
-                    Intent i = new Intent(getApplicationContext(), MapsDestinationActivity.class);
-                    i.putExtra("latitude", latg);
-                    i.putExtra("longitude", lngg);
-                    i.putExtra("destination", destination);
-                    startActivity(i);
-                }
-
-            }
-        });
-
-        buttonGoDestinationArrival.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(checkBoxHere.isChecked())
-                {
-                    Intent i = new Intent(getApplicationContext(), MapWayActivity.class);
-                    here = true ;
-                    startActivity(i);
-                    i.putExtra("latitude", latg);
-                    i.putExtra("longitude", lngg);
-                    i.putExtra("here",here);
-                }
-                else {
-                    Intent i = new Intent(getApplicationContext(), MapsDestionationAdActivity.class);
-                    startActivity(i);
-                    i.putExtra("here",here);
+                    if (checkBoxHere.isChecked()) {
+                        Intent i = new Intent(getApplicationContext(), MapWayActivity.class);
+                        here = true;
+                        startActivity(i);
+                        i.putExtra("latitude", latg);
+                        i.putExtra("longitude", lngg);
+                        //i.putExtra("here", here);
+                        i.putExtra("destination", destination);
+                    } else {
+                        Intent i = new Intent(getApplicationContext(), AddDepartActivity.class);
+                        startActivity(i);
+                        i.putExtra("destination", destination);
+                        //i.putExtra("here", here);
+                    }
                 }
             }
-        });
+        });*/
     }
 
     @Override

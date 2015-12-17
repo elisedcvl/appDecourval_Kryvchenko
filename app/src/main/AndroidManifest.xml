@@ -34,19 +34,20 @@
         <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
 
         <activity android:name=".WelcomeActivity" />
-        <activity android:name=".MapsActivity" />
-        <activity android:name=".PredefinedRouteActivity" />
         <activity android:name=".FreeTrailActivity" />
         <activity android:name=".StrenghtTrainingActivity" />
         <activity android:name=".Maps2Activity" />
         <activity android:name=".Maps3Activity" />
-        <activity android:name=".MapsDestinationActivity" />
-        <activity android:name=".MapsDestionationAdActivity" />
         <activity
             android:name=".MapWayActivity"
             android:label="@string/title_activity_map_way"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".MapsDestionationHereActivity"></activity>
+        <activity android:name=".AddDepartActivity" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".MySQLiteHelperUser" />
+        <activity android:name=".TestDatabaseUserActivity" />
+        <activity android:name=".TestBDUser" />
+        <activity android:name=".TestBDUser2"></activity>
     </application>
 
 </manifest>

@@ -22,24 +22,24 @@ public class MapWayActivity extends Activity {
         gMap = ((MapFragment)getFragmentManager().findFragmentById(R.id.map)).getMap();
 
         //On récupère le départ et l'arrivée
-        final String editDeparture = getIntent().getStringExtra("departure");
-        final String editArrival = getIntent().getStringExtra("arrival");
-        Bundle extras = getIntent().getExtras();
-        //final Boolean here = extras.getBoolean("here");
+        //final String editDeparture = getIntent().getStringExtra("departure");
+        //final String editArrival = getIntent().getStringExtra("arrival");
+        final Boolean here = getIntent().getBooleanExtra("here", true);
 
-        new ItineraryTask(this, gMap, editDeparture, editArrival).execute();
+        //new ItineraryTaskHere(this, gMap, lat,lng, editArrival).execute();
 
-       /* //TODO: Appeler une tâche asynchrone qui affiche l'itinéraire sur la carte
-        if (here==true) {
-            new ItineraryTask(this, gMap, editDeparture, editArrival).execute();
-
-        }
-        else {
+        if (here==true) {       //Maps3
             Bundle extras1 = getIntent().getExtras();
-            double lat = extras1.getDouble("lat");
-            double lng = extras1.getDouble("lng");
-            new ItineraryTaskHere(this, gMap, lat,lng, editArrival).execute();
-        }*/
+            String destination = getIntent().getStringExtra("destination");
+            double lat = extras1.getDouble("latitude");
+            double lng = extras1.getDouble("longitude");
+            new ItineraryTaskHere(this, gMap, lat,lng, destination).execute();
+        }
+        else {                  //AddDepart
+            String destination = getIntent().getStringExtra("destination");
+            String departure = getIntent().getStringExtra("departure");
+            new ItineraryTask(this, gMap, departure, destination).execute();
+        }
 
     }
 }

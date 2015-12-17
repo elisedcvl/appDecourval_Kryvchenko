@@ -13,30 +13,32 @@ public class WelcomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
 
-        final Button FreeTrailButton = (Button) findViewById(R.id.FreeTrailButton);
+        final Button ProfileButton = (Button) findViewById(R.id.ProfileButton);
         final Button PredefinedRouteButton =(Button)  findViewById(R.id.PredefinedRouteButton);
-        final Button StrengthTrainingButton = (Button) findViewById(R.id.StrengthTrainingButton);
-
-        FreeTrailButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(WelcomeActivity.this, MapsDestionationAdActivity.class);
-                startActivity(intent);
-            }
-        } );
+        //final Button StrengthTrainingButton = (Button) findViewById(R.id.StrengthTrainingButton);
 
         PredefinedRouteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(WelcomeActivity.this, PredefinedRouteActivity.class);
+                Intent intent = new Intent(WelcomeActivity.this, Maps3Activity.class);
                 startActivity(intent);
             }
         } );
 
-        StrengthTrainingButton.setOnClickListener(new View.OnClickListener() {
+        /*StrengthTrainingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(WelcomeActivity.this, StrenghtTrainingActivity.class);
+                startActivity(intent);
+            }
+        });*/
+
+
+
+        ProfileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(WelcomeActivity.this, ProfileActivity.class);
                 startActivity(intent);
             }
         });

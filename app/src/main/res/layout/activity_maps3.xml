@@ -19,8 +19,8 @@
         android:id="@+id/map"
         tools:context=".Maps3Activity"
         android:name="com.google.android.gms.maps.SupportMapFragment"
-        android:layout_below="@+id/buttonGoDestination"
-        android:layout_above="@+id/buttonGoDestinationArrival" />
+        android:layout_above="@+id/editDestination"
+        android:layout_alignParentTop="true" />
 
     <LinearLayout
         android:id="@+id/linearLayout1"
@@ -37,7 +37,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="You are here:"
         android:id="@+id/textView3"
-        android:layout_below="@+id/linearLayout1"
+        android:layout_alignTop="@+id/map"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -47,48 +47,39 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Final destination :"
         android:id="@+id/textView2"
-        android:layout_above="@+id/textView3"
+        android:layout_above="@+id/editDestination"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true" />
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editDestination"
-        android:layout_alignBottom="@+id/linearLayout1"
-        android:layout_toLeftOf="@+id/buttonGoDestination"
-        android:layout_toRightOf="@+id/textView2"
-        android:layout_toEndOf="@+id/textView2"
-        android:layout_alignRight="@+id/buttonGoDestination" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="50dp"
+        android:layout_alignRight="@+id/map"
+        android:layout_alignEnd="@+id/map" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="GO"
         android:id="@+id/buttonGoDestination"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/editDestination" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Choose arrival and destination"
-        android:id="@+id/buttonGoDestinationArrival"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="51dp" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="here"
+        android:text="Leave from this place"
         android:id="@+id/checkBoxHere"
         android:checked="false"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/textView3"
-        android:layout_alignEnd="@+id/textView3" />
+        android:layout_alignBaseline="@+id/buttonGoDestination"
+        android:layout_alignBottom="@+id/buttonGoDestination"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

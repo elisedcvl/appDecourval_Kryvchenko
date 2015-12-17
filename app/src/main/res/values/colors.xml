@@ -7,5 +7,7 @@
     <color name="white">#FFFFFF</color>
     <color name="greyButton">#646867</color>
     <color name="writing">#0D533B</color>
+    <color name="black">#000000</color>
+
 
     </resources>
