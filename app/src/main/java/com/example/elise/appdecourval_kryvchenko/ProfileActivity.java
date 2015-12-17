@@ -3,6 +3,7 @@ package com.example.elise.appdecourval_kryvchenko;
 import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -26,7 +27,7 @@ public class ProfileActivity extends Activity {
 
     //private UserDataSource datasource;
 
-   private UserBDD userBdd;
+   DatabaseHelperUser userBdd;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,10 +42,11 @@ public class ProfileActivity extends Activity {
 
         //Création d'une instance de ma classe UserBDD
         //UserBDD userBdd = new UserBDD(this);
-        userBdd = new UserBDD(this);
+        userBdd = new DatabaseHelperUser(this);
 
         //On ouvre la base de données pour écrire dedans
-        userBdd.open();
+        //userBdd.open();
+        userBdd.onCreate();
 
         final Button buttonSave = (Button) findViewById(R.id.buttonSave);
         final EditText editTextAge = (EditText) findViewById(R.id.editTextAge);
@@ -53,8 +55,7 @@ public class ProfileActivity extends Activity {
         final RadioButton radioButtonSportYes = (RadioButton) findViewById(R.id.radioButtonSportYes);
         final RadioButton radioButtonSportNo = (RadioButton) findViewById(R.id.radioButtonSportNo);
 
-
-        buttonSave.setOnClickListener(new View.OnClickListener() {
+                buttonSave.setOnClickListener(new View.OnClickListener() {
             int id = 1;
             int sexe = 0;
             int age = 20;
@@ -74,11 +75,6 @@ public class ProfileActivity extends Activity {
                 }
 
                 //datasource.createUser(sexe, age, sport);
-
-                User user = new User("a", 1, 1, 1);
-                //On insère le livre que l'on vient de créer
-                userBdd.insertUser(user);
-                userBdd.createUser(user);
 
                 Intent intent = new Intent(ProfileActivity.this, TestBDUser2.class);
                 startActivity(intent);

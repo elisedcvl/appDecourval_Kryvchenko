@@ -47,7 +47,8 @@
         <activity android:name=".MySQLiteHelperUser" />
         <activity android:name=".TestDatabaseUserActivity" />
         <activity android:name=".TestBDUser" />
-        <activity android:name=".TestBDUser2"></activity>
+        <activity android:name=".TestBDUser2" />
+        <activity android:name=".DatabaseHelperUser"></activity>
     </application>
 
 </manifest>
