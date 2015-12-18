@@ -39,6 +39,7 @@ public class MapWayActivity extends Activity {
             String destination = getIntent().getStringExtra("destination");
             String departure = getIntent().getStringExtra("departure");
             new ItineraryTask(this, gMap, departure, destination).execute();
+            gMap.addMarker(null);
         }
 
     }

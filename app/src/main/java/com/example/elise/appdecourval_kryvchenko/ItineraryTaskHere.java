@@ -157,7 +157,7 @@ public class ItineraryTaskHere extends AsyncTask<Void, Integer, Boolean> {
         else {
             //On déclare le polyline, c'est-à-dire le trait (ici bleu) que l'on ajoute sur la carte pour tracer l'itinéraire
             final PolylineOptions polylines = new PolylineOptions();
-            polylines.color(Color.BLUE);
+            polylines.color(Color.GREEN);
 
             //On construit le polyline
             for(final LatLng latLng : lstLatLng) {
