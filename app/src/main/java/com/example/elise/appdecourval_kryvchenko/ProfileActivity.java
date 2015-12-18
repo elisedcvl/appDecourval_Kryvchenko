@@ -78,12 +78,14 @@ public class ProfileActivity extends Activity {
 
                 //datasource.createUser(sexe, age, sport);
 
-                Intent intent = new Intent(ProfileActivity.this, TestBDUser2.class);
+                Intent intent = new Intent(ProfileActivity.this, TestBDUser.class);
                 startActivity(intent);
                 bool = userBdd.insertData(id,sexe,age,sport);
                 if (bool = true) {Toast toast = Toast.makeText(getApplicationContext(),
                         "Insert Data !", Toast.LENGTH_LONG);
                     toast.show();}
+                int age = userBdd.getAge(1);
+                //Toast toast = Toast.makeText(getApplicationContext(),age, Toast.LENGTH_LONG);
             }
 
 

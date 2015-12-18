@@ -52,7 +52,7 @@ public class DatabaseHelperUser extends SQLiteOpenHelper {
 
     public boolean deleteAllUsers() {
         SQLiteDatabase db=this.getWritableDatabase();
-        long doneDelete = db.delete(TABLE_NAME, null , null);
+        long doneDelete = db.delete(TABLE_NAME, null, null);
         if (doneDelete== -1)
             return false;
         else
@@ -62,9 +62,16 @@ public class DatabaseHelperUser extends SQLiteOpenHelper {
 
     public Cursor getAllData(){
         SQLiteDatabase db=this.getWritableDatabase();
-        Cursor res=db.rawQuery("select * from "+TABLE_NAME,null);
+        Cursor res=db.rawQuery("select * from " + TABLE_NAME, null);
         return res;
 
     }
+
+    public int getAge (int id ){
+        SQLiteDatabase db=this.getWritableDatabase();
+        Cursor res=db.rawQuery("select AGE from "+TABLE_NAME + "WHERE ID=" + id ,null);
+        return res.getInt(Integer.parseInt(col_3));
+    }
+
 
 }

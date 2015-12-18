@@ -2,6 +2,7 @@ package com.example.elise.appdecourval_kryvchenko;
 
 import android.app.Activity;
 import android.app.ListActivity;
+import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -11,25 +12,25 @@ import java.util.List;
 
 public class TestBDUser extends ListActivity {
 
-    private UserBDD userBdd;
+    private DatabaseHelperUser userBdd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_bduser);
 
         //Création d'une instance de ma classe LivresBDD
-        userBdd = new UserBDD(this);
+        userBdd = new DatabaseHelperUser(this);
 
         //Création d'un livre
         //User user = new User("a", 1, 1, 1);
 
         //On ouvre la base de données pour écrire dedans
-        userBdd.open();
+        //userBdd.open();
 
-        User user = new User("a", 1, 1, 1);
+        //User user = new User("a", 1, 1, 1);
         //On insère le livre que l'on vient de créer
-        userBdd.insertUser(user);
-        userBdd.createUser(user);
+        //userBdd.insertUser(user);
+       // userBdd.createUser(user);
         //On insère le livre que l'on vient de créer
         //userBdd.insertUser(user);
 
@@ -37,10 +38,10 @@ public class TestBDUser extends ListActivity {
         //on extrait le livre de la BDD grâce au titre du livre que l'on a créé précédemment
        //User userFromBdd = userBdd.getUserWithId(user.getId());
 
-        List<User> values = userBdd.getAllUsers();
+        //List<> values = userBdd.getAllData();
 
-        ArrayAdapter<User> adapter = new ArrayAdapter<User>(this,android.R.layout.simple_list_item_1, values);
-        setListAdapter(adapter);
+        //ArrayAdapter<User> adapter = new ArrayAdapter<User>(this,android.R.layout.simple_list_item_1, values);
+        //setListAdapter(adapter);
 
          /*//Si un livre est retourné (donc si le livre à bien été ajouté à la BDD)
         if (userFromBdd != null) {
