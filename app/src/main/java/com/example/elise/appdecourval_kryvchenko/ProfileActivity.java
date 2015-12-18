@@ -44,9 +44,10 @@ public class ProfileActivity extends Activity {
         //UserBDD userBdd = new UserBDD(this);
         userBdd = new DatabaseHelperUser(this);
 
+
         //On ouvre la base de données pour écrire dedans
         //userBdd.open();
-        userBdd.onCreate();
+
 
         final Button buttonSave = (Button) findViewById(R.id.buttonSave);
         final EditText editTextAge = (EditText) findViewById(R.id.editTextAge);
@@ -61,6 +62,7 @@ public class ProfileActivity extends Activity {
             int age = 20;
             //int age = Integer.parseInt(editTextAge.getText().toString());
             int sport = 0;
+            boolean bool =false;
 
             public void onClick(View v) {
 
@@ -78,7 +80,13 @@ public class ProfileActivity extends Activity {
 
                 Intent intent = new Intent(ProfileActivity.this, TestBDUser2.class);
                 startActivity(intent);
+                bool = userBdd.insertData(id,sexe,age,sport);
+                if (bool = true) {Toast toast = Toast.makeText(getApplicationContext(),
+                        "Insert Data !", Toast.LENGTH_LONG);
+                    toast.show();}
             }
+
+
         });
 
 
