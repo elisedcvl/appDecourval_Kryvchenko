@@ -1,10 +1,16 @@
 package com.example.elise.appdecourval_kryvchenko;
 
 import android.app.Activity;
+import android.location.Address;
+import android.location.Geocoder;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
+
+import java.io.IOException;
+import java.util.List;
 
 public class MapWayActivity extends Activity {
 
@@ -31,9 +37,14 @@ public class MapWayActivity extends Activity {
         if (here==true) {       //Maps3
             Bundle extras1 = getIntent().getExtras();
             String destination = getIntent().getStringExtra("destination");
-            double lat = extras1.getDouble("latitude");
-            double lng = extras1.getDouble("longitude");
-            new ItineraryTaskHere(this, gMap, lat,lng, destination).execute();
+            double latD = getLatFromAddress(destination) ;
+            double latA = extras1.getDouble("latitude");
+            double lngA = extras1.getDouble("longitude");
+
+
+            Toast toast = Toast.makeText(getApplicationContext(),"Lat !"+latD, Toast.LENGTH_LONG);
+            new ItineraryTaskHere(this, gMap, latA,lngA, destination).execute();
+
         }
         else {                  //AddDepart
             String destination = getIntent().getStringExtra("destination");
@@ -42,6 +53,24 @@ public class MapWayActivity extends Activity {
             gMap.addMarker(null);
         }
 
+
+    }
+
+    public double getLatFromAddress(String strAddress){
+
+        Geocoder coder = new Geocoder(this);
+        List<Address> address;
+        double lat =0;
+
+        try {
+            address = coder.getFromLocationName(strAddress,5);
+            Address location=address.get(0);
+            lat = location.getLatitude();
+            location.getLongitude();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return lat;
     }
 }
 

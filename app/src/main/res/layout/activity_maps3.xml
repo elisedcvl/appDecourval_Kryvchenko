@@ -66,7 +66,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="GO"
-        android:id="@+id/buttonGoDestination"
+        android:id="@+id/buttonGoTraining"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
@@ -77,8 +77,8 @@
         android:text="Leave from this place"
         android:id="@+id/checkBoxHere"
         android:checked="false"
-        android:layout_alignBaseline="@+id/buttonGoDestination"
-        android:layout_alignBottom="@+id/buttonGoDestination"
+        android:layout_alignBaseline="@+id/buttonGoTraining"
+        android:layout_alignBottom="@+id/buttonGoTraining"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 

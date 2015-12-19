@@ -5,4 +5,5 @@
     <string name="email_or_password_empty">Email address and password are required</string>
     <string name="mapKey">AIzaSyDGfdCm6ANf5J4zWONIzaaHj8JkTj3A464</string>
     <string name="title_activity_map_way">MapWayActivity</string>
+    <string name="title_activity_activity_itenerary">ActivityItenerary</string>
 </resources>

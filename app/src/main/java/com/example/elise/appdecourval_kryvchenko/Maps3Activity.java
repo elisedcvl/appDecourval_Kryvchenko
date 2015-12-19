@@ -44,8 +44,8 @@ public class Maps3Activity extends FragmentActivity implements OnMapReadyCallbac
         //latituteField = (TextView) findViewById(R.id.TextView02);
         //longitudeField = (TextView) findViewById(R.id.TextView04);
 
-        final Button buttonGoDestination = (Button) findViewById(R.id.buttonGoDestination);
-        final Button buttonGoDestinationArrival = (Button) findViewById(R.id.buttonGoDestination);
+        final Button buttonGoDestination = (Button) findViewById(R.id.buttonGoTraining);
+        final Button buttonGoDestinationArrival = (Button) findViewById(R.id.buttonGoTraining);
         final EditText editDestination = (EditText) findViewById(R.id.editDestination);
         final CheckBox checkBoxHere = (CheckBox) findViewById(R.id.checkBoxHere);
 
@@ -103,7 +103,7 @@ public class Maps3Activity extends FragmentActivity implements OnMapReadyCallbac
                     bundleLng.putDouble("longitude", lngg);
                     final Bundle bundleHere = new Bundle();
                     bundleHere.putBoolean("here", here);
-                    final Intent intent = new Intent(getApplicationContext(), MapWayActivity.class);
+                    final Intent intent = new Intent(getApplicationContext(), MapWayActivity2.class);
                     intent.putExtras(bundle);
                     intent.putExtras(bundleLat);
                     intent.putExtras(bundleLng);
