@@ -59,6 +59,7 @@ public class TrainingExoActivity extends AppCompatActivity {
         stop = (Button) findViewById(R.id.stopC);
         restart = (Button) findViewById(R.id.restartC);
 
+        focus = (Chronometer) findViewById(R.id.chronometer1);
 
         start.setOnClickListener(new View.OnClickListener() {
             @Override
