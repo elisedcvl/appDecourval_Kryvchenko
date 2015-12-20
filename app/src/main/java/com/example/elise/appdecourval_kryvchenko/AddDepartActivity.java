@@ -47,9 +47,9 @@ public class AddDepartActivity extends AppCompatActivity {
                 final Bundle bundleHere = new Bundle();
                 bundleHere.putBoolean("here", here);
                 final Intent intent = new Intent(getApplicationContext(), MapWayActivity.class);
-                intent.putExtras(bundleDep);
+               /* intent.putExtras(bundleDep);
                 intent.putExtras(bundleDest);
-                intent.putExtras(bundleHere);
+                intent.putExtras(bundleHere);*/
                 startActivity(intent);
             }
         });

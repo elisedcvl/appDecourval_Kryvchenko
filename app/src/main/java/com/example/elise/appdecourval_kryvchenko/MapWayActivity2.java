@@ -54,25 +54,17 @@ public class MapWayActivity2 extends Activity {
             double latA = extras1.getDouble("latitude");
             double lngA = extras1.getDouble("longitude");
 
-           /* final Bundle bundleLatA = new Bundle();
-            bundleLatA.putDouble("latitude", latA);
-            final Bundle bundleLngA = new Bundle();
-            bundleLngA.putDouble("longitude", lngA);
-            final Bundle bundleLatD = new Bundle();
-            bundleLatD.putDouble("latitude", latD);
-            final Bundle bundleLngD = new Bundle();
-            bundleLngD.putDouble("longitudeD", lngD);*/
-
-            Location locationD = new Location("point D");
+            /*Location locationD = new Location("point D");
             locationD.setLatitude(latD);
             locationD.setLongitude(lngD);
             Location locationA = new Location("point A");
             locationA.setLatitude(latA);
-            locationA.setLongitude(lngA);
-            distance = locationD.distanceTo(locationA);
+            locationA.setLongitude(lngA);*/
+            float [] dist = new float[1];
+            Location.distanceBetween(latD,lngD,latA,lngA,dist);
+            distance = dist[0] * 0.000621371192f;
+            //distance = locationA.distanceTo(locationD);
 
-
-            Toast toast = Toast.makeText(getApplicationContext(),"Lat !"+latD, Toast.LENGTH_LONG);
             new ItineraryTaskHere(this, gMap, latA,lngA, destination).execute();
 
         }
@@ -81,6 +73,13 @@ public class MapWayActivity2 extends Activity {
             String departure = getIntent().getStringExtra("departure");
             new ItineraryTask(this, gMap, departure, destination).execute();
             gMap.addMarker(null);
+            /*double latD = getLatFromAddress(departure) ;
+            double lngD = getLngFromAddress(departure) ;
+            double latA = getLatFromAddress(destination) ;
+            double lngA = getLngFromAddress(destination) ;
+            float [] dist = new float[1];
+            Location.distanceBetween(latD, lngD, latA, lngA, dist);
+            distance = dist[0] * 0.000621371192f;*/
         }
 
 
@@ -88,19 +87,12 @@ public class MapWayActivity2 extends Activity {
             @Override
             public void onClick(View v) {
 
-                /*final Bundle bundle = new Bundle();
-                bundle.putString("destination", editDestination.getText().toString());
-                final Intent intent = new Intent(getApplicationContext(), AddDepartActivity.class);
-                intent.putExtras(bundle);
-                startActivity(intent);*/
-
                 final Bundle bundle = new Bundle();
                 bundle.putFloat("distance", distance);
                 Intent intent = new Intent(MapWayActivity2.this, TrainingExoActivity.class);
                 intent.putExtra("distance",distance);
                 startActivity(intent);
-                //final Bundle bundleDistance = new Bundle();
-                //bundleDistance.putFloat("distance", distance);
+
             }
         });
 
