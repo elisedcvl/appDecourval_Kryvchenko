@@ -8,7 +8,6 @@ import android.location.Location;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
@@ -38,13 +37,7 @@ public class MapWayActivity2 extends Activity {
         gMap = ((MapFragment)getFragmentManager().findFragmentById(R.id.map)).getMap();
 
 
-
-        //On récupère le départ et l'arrivée
-        //final String editDeparture = getIntent().getStringExtra("departure");
-        //final String editArrival = getIntent().getStringExtra("arrival");
         final Boolean here = getIntent().getBooleanExtra("here", true);
-
-        //new ItineraryTaskHere(this, gMap, lat,lng, editArrival).execute();
 
         if (here==true) {       //Maps3
             Bundle extras1 = getIntent().getExtras();
@@ -54,32 +47,29 @@ public class MapWayActivity2 extends Activity {
             double latA = extras1.getDouble("latitude");
             double lngA = extras1.getDouble("longitude");
 
-            /*Location locationD = new Location("point D");
-            locationD.setLatitude(latD);
-            locationD.setLongitude(lngD);
-            Location locationA = new Location("point A");
-            locationA.setLatitude(latA);
-            locationA.setLongitude(lngA);*/
             float [] dist = new float[1];
             Location.distanceBetween(latD,lngD,latA,lngA,dist);
             distance = dist[0] * 0.000621371192f;
-            //distance = locationA.distanceTo(locationD);
 
             new ItineraryTaskHere(this, gMap, latA,lngA, destination).execute();
 
         }
-        else {                  //AddDepart
+        else {
+
             String destination = getIntent().getStringExtra("destination");
             String departure = getIntent().getStringExtra("departure");
             new ItineraryTask(this, gMap, departure, destination).execute();
-            gMap.addMarker(null);
-            /*double latD = getLatFromAddress(departure) ;
-            double lngD = getLngFromAddress(departure) ;
-            double latA = getLatFromAddress(destination) ;
-            double lngA = getLngFromAddress(destination) ;
+
+            double latD = getLatFromAddress(destination) ;
+            double lngD = getLngFromAddress(destination) ;
+            double latA = getLatFromAddress(departure);
+            double lngA = getLngFromAddress(departure);
+
             float [] dist = new float[1];
-            Location.distanceBetween(latD, lngD, latA, lngA, dist);
-            distance = dist[0] * 0.000621371192f;*/
+            Location.distanceBetween(latD,lngD,latA,lngA,dist);
+            distance = dist[0] * 0.000621371192f;
+
+
         }
 
 
@@ -90,7 +80,7 @@ public class MapWayActivity2 extends Activity {
                 final Bundle bundle = new Bundle();
                 bundle.putFloat("distance", distance);
                 Intent intent = new Intent(MapWayActivity2.this, TrainingExoActivity.class);
-                intent.putExtra("distance",distance);
+                intent.putExtra("distance", distance);
                 startActivity(intent);
 
             }

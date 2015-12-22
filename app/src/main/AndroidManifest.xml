@@ -38,10 +38,6 @@
         <activity android:name=".StrenghtTrainingActivity" />
         <activity android:name=".Maps2Activity" />
         <activity android:name=".Maps3Activity" />
-        <activity
-            android:name=".MapWayActivity"
-            android:label="@string/title_activity_map_way"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".AddDepartActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".MySQLiteHelperUser" />

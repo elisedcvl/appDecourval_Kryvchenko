@@ -88,12 +88,10 @@ public class Maps3Activity extends FragmentActivity implements OnMapReadyCallbac
         buttonGoDestination.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                if("".equals(editDestination.getText().toString().trim())) {
-                    Toast.makeText(Maps3Activity.this, "Please enter a destination", Toast.LENGTH_SHORT).show();
-                }
-
                 if (checkBoxHere.isChecked()) {
+                    if("".equals(editDestination.getText().toString().trim())) {
+                        Toast.makeText(Maps3Activity.this, "Please enter a destination", Toast.LENGTH_SHORT).show();
+                    }
                     here = true;
                     final Bundle bundle = new Bundle();
                     bundle.putString("destination", editDestination.getText().toString());
@@ -110,7 +108,9 @@ public class Maps3Activity extends FragmentActivity implements OnMapReadyCallbac
                     intent.putExtras(bundleHere);
                     startActivity(intent);
                 } else {
-
+                    if("".equals(editDestination.getText().toString().trim())) {
+                        Toast.makeText(Maps3Activity.this, "Please enter a destination", Toast.LENGTH_SHORT).show();
+                    }
                     final Bundle bundle = new Bundle();
                     bundle.putString("destination", editDestination.getText().toString());
                     final Intent intent = new Intent(getApplicationContext(), AddDepartActivity.class);

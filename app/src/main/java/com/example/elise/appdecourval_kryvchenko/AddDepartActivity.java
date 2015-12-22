@@ -46,15 +46,14 @@ public class AddDepartActivity extends AppCompatActivity {
                 bundleDest.putString("destination", destination);
                 final Bundle bundleHere = new Bundle();
                 bundleHere.putBoolean("here", here);
-                final Intent intent = new Intent(getApplicationContext(), MapWayActivity.class);
-               /* intent.putExtras(bundleDep);
+                final Intent intent = new Intent(getApplicationContext(), MapWayActivity2.class);
+                intent.putExtras(bundleDep);
                 intent.putExtras(bundleDest);
-                intent.putExtras(bundleHere);*/
+                intent.putExtras(bundleHere);
                 startActivity(intent);
             }
         });
 
     }
-
 
 }
