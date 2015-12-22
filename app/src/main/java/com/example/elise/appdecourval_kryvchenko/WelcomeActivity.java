@@ -15,6 +15,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
         final Button ProfileButton = (Button) findViewById(R.id.ProfileButton);
         final Button PredefinedRouteButton =(Button)  findViewById(R.id.PredefinedRouteButton);
+        final Button FreeTrailButton =(Button)  findViewById(R.id.FreeTrailButton);
         //final Button StrengthTrainingButton = (Button) findViewById(R.id.StrengthTrainingButton);
 
         PredefinedRouteButton.setOnClickListener(new View.OnClickListener() {
@@ -25,13 +26,13 @@ public class WelcomeActivity extends AppCompatActivity {
             }
         } );
 
-        /*StrengthTrainingButton.setOnClickListener(new View.OnClickListener() {
+        FreeTrailButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(WelcomeActivity.this, StrenghtTrainingActivity.class);
+                Intent intent = new Intent(WelcomeActivity.this, FreeTrailActivity.class);
                 startActivity(intent);
             }
-        });*/
+        });
 
 
 
@@ -42,8 +43,6 @@ public class WelcomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
 
 
     }
