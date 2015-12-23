@@ -303,7 +303,7 @@
     <Chronometer
         android:id="@+id/chronometer1"
         android:textColor="#4169E1"
-        android:textSize="20dp"
+        android:textSize="35dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Chronometer"
@@ -317,9 +317,9 @@
         android:layout_height="wrap_content"
         android:text="Start"
         android:id="@+id/startC"
-        android:layout_below="@+id/textView29"
-        android:layout_toRightOf="@+id/textView35"
-        android:layout_toEndOf="@+id/textView35" />
+        android:layout_alignTop="@+id/chronometer1"
+        android:layout_toRightOf="@+id/textView18"
+        android:layout_toEndOf="@+id/textView18" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -328,8 +328,8 @@
         android:text="stop"
         android:id="@+id/stopC"
         android:layout_alignTop="@+id/startC"
-        android:layout_alignLeft="@+id/textView16"
-        android:layout_alignStart="@+id/textView16" />
+        android:layout_toRightOf="@+id/d3"
+        android:layout_toEndOf="@+id/d3" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -338,7 +338,7 @@
         android:text="restart"
         android:id="@+id/restartC"
         android:layout_alignTop="@+id/stopC"
-        android:layout_toRightOf="@+id/textView16"
-        android:layout_toEndOf="@+id/textView16" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

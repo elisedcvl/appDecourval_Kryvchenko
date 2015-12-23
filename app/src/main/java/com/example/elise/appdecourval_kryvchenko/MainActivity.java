@@ -63,41 +63,6 @@ public class MainActivity extends AppCompatActivity
                     "No Internet connection !", Toast.LENGTH_LONG);
             toast.show();
         }
-
-
-
-       /* loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                final String loginTxt = login.getText().toString();
-                final String passTxt = pass.getText().toString();
-                // On déclare le pattern que l’on doit vérifier
-                Pattern p = Pattern.compile(".+@.+\\.[a-z]+");
-                // On déclare un matcher, qui comparera le pattern avec la string passée en argument
-                Matcher m = p.matcher(loginTxt);
-                // Si l’adresse mail saisie ne correspond au format d’une adresse mail on un affiche un message à l'utilisateur
-                if (!m.matches()) {
-                    // Toast est une classe fournie par le SDK Androi pour afficher les messages (indications) à l'intention de
-                    // l'utilisateur. Ces messages ne possédent pas d'interaction avec l'utilisateur Le premier argument représente le contexte, puis
-                    // le message et à la fin la durée d'affichage du Toast (constante LENGTH_SHORT ou LENGTH_LONG). Sans oublier d'appeler la méthode
-                    //show pour afficher le Toast
-                    Toast.makeText(MainActivity.this, R.string.email_format_error, Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                if (loginTxt.equals("") || passTxt.equals("")) {
-                    Toast.makeText(MainActivity.this,
-                            R.string.email_or_password_empty, Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                Intent intent = new Intent(MainActivity.this, LoginDisplayActivity.class);
-                intent.putExtra(EXTRA_LOGIN, login.getText().toString());
-                intent.putExtra(EXTRA_PASSWORD, pass.getText().toString());
-                startActivity(intent);
-            }
-        } );*/
-
     }
 
     public void onClick(View v) {
