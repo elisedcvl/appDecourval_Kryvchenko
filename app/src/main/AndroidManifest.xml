@@ -39,7 +39,6 @@
 
         <activity android:name=".WelcomeActivity" />
         <activity android:name=".FreeTrailActivity" />
-        <activity android:name=".StrenghtTrainingActivity" />
         <activity android:name=".Maps3Activity" />
         <activity android:name=".AddDepartActivity" />
         <activity android:name=".ProfileActivity" />

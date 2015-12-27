@@ -41,8 +41,6 @@ public class Maps3Activity extends FragmentActivity implements OnMapReadyCallbac
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps3);
-        //latituteField = (TextView) findViewById(R.id.TextView02);
-        //longitudeField = (TextView) findViewById(R.id.TextView04);
 
         final Button buttonGoDestination = (Button) findViewById(R.id.buttonGoTraining);
         final Button buttonGoDestinationArrival = (Button) findViewById(R.id.buttonGoTraining);
@@ -81,10 +79,6 @@ public class Maps3Activity extends FragmentActivity implements OnMapReadyCallbac
                 (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        // take adress
-
-
-
         buttonGoDestination.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -117,35 +111,8 @@ public class Maps3Activity extends FragmentActivity implements OnMapReadyCallbac
                     intent.putExtras(bundle);
                     startActivity(intent);
                  }
-
             }
         });
-
-        /*buttonGoDestination.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                if("".equals(editDestination.getText().toString().trim())) {
-                    Toast.makeText(Maps3Activity.this, "Please enter a destination", Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    if (checkBoxHere.isChecked()) {
-                        Intent i = new Intent(getApplicationContext(), MapWayActivity.class);
-                        here = true;
-                        startActivity(i);
-                        i.putExtra("latitude", latg);
-                        i.putExtra("longitude", lngg);
-                        //i.putExtra("here", here);
-                        i.putExtra("destination", destination);
-                    } else {
-                        Intent i = new Intent(getApplicationContext(), AddDepartActivity.class);
-                        startActivity(i);
-                        i.putExtra("destination", destination);
-                        //i.putExtra("here", here);
-                    }
-                }
-            }
-        });*/
     }
 
     @Override
@@ -204,14 +171,12 @@ public class Maps3Activity extends FragmentActivity implements OnMapReadyCallbac
     @Override
     public void onStatusChanged(String provider, int status, Bundle extras) {
         // TODO Auto-generated method stub
-
     }
 
     @Override
     public void onProviderEnabled(String provider) {
         Toast.makeText(this, "Enabled new provider " + provider,
                 Toast.LENGTH_SHORT).show();
-
     }
 
     @Override

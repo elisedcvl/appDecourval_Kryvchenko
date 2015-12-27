@@ -36,10 +36,6 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       /* final EditText login = (EditText) findViewById(R.id.userEmail);
-        final EditText pass = (EditText) findViewById(R.id.userPassword);
-        final Button loginButton = (Button) findViewById(R.id.connect);*/
-
         findViewById(R.id.button_sign_in).setOnClickListener(this);
 
         GoogleSignInOptions gso = new GoogleSignInOptions
@@ -111,7 +107,5 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onConnectionFailed(ConnectionResult connectionResult) {
     }
-
-
 
 }

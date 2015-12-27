@@ -26,9 +26,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/editDepart"
         android:layout_alignTop="@+id/textView13"
-        android:layout_toRightOf="@+id/textView13"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignLeft="@+id/buttonGoResearch"
+        android:layout_alignStart="@+id/buttonGoResearch" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -46,12 +47,13 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/ArrivalView"
-        android:layout_alignBottom="@+id/textView14"
         android:layout_alignRight="@+id/editDepart"
         android:layout_alignEnd="@+id/editDepart"
+        android:layout_toEndOf="@+id/textView14"
         android:layout_alignTop="@+id/textView14"
-        android:layout_toRightOf="@+id/textView14"
-        android:layout_toEndOf="@+id/textView14" />
+        android:layout_alignLeft="@+id/editDepart"
+        android:layout_alignStart="@+id/editDepart"
+        android:layout_above="@+id/buttonGoResearch" />
 
     <Button
         android:layout_width="wrap_content"
@@ -59,5 +61,7 @@
         android:text="GO"
         android:id="@+id/buttonGoResearch"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background= "@color/greyButton"
+        android:textColor="@color/white"/>
 </RelativeLayout>

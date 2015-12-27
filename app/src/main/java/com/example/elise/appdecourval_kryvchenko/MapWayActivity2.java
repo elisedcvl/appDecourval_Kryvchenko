@@ -18,14 +18,9 @@ import java.util.List;
 
 public class MapWayActivity2 extends Activity {
 
-
-
     private GoogleMap gMap;
     private float distance =0;
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +30,6 @@ public class MapWayActivity2 extends Activity {
 
         //On récupère les composants graphiques
         gMap = ((MapFragment)getFragmentManager().findFragmentById(R.id.map)).getMap();
-
 
         final Boolean here = getIntent().getBooleanExtra("here", true);
 

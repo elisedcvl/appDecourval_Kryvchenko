@@ -7,6 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background= "@color/couleurFond"
     tools:context="com.example.elise.appdecourval_kryvchenko.TrainingExoActivity">
 
     <TextView
@@ -17,7 +18,8 @@
         android:id="@+id/textView15"
         android:layout_below="@+id/textView31"
         android:layout_toLeftOf="@+id/d2"
-        android:layout_toStartOf="@+id/d2" />
+        android:layout_toStartOf="@+id/d2"
+        android:textColor="@color/writing"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -27,7 +29,8 @@
         android:text="XXXX"
         android:layout_above="@+id/textView17"
         android:layout_toRightOf="@+id/textView36"
-        android:layout_toEndOf="@+id/textView36" />
+        android:layout_toEndOf="@+id/textView36"
+        android:textColor="@color/writing"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -36,7 +39,8 @@
         android:text="Good luck !"
         android:id="@+id/textView16"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/writing"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -47,7 +51,8 @@
         android:layout_below="@+id/textView15"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="49dp" />
+        android:layout_marginTop="49dp"
+        android:textColor="@color/writing"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -57,7 +62,8 @@
         android:id="@+id/textView18"
         android:layout_below="@+id/textView20"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="@color/writing"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -67,7 +73,8 @@
         android:id="@+id/textView19"
         android:layout_below="@+id/textView21"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="@color/writing"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -107,7 +114,8 @@
         android:id="@+id/textView23"
         android:layout_below="@+id/textView22"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="@color/writing"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -127,7 +135,8 @@
         android:id="@+id/textView25"
         android:layout_below="@+id/textView24"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="@color/writing"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -147,7 +156,8 @@
         android:id="@+id/textView27"
         android:layout_below="@+id/textView26"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="@color/writing"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -167,7 +177,8 @@
         android:id="@+id/d1"
         android:layout_above="@+id/textView20"
         android:layout_toRightOf="@+id/textView28"
-        android:layout_toEndOf="@+id/textView28" />
+        android:layout_toEndOf="@+id/textView28"
+        android:textColor="@color/writing"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -187,7 +198,8 @@
         android:id="@+id/d2"
         android:layout_alignTop="@+id/textView30"
         android:layout_toRightOf="@+id/textView30"
-        android:layout_toEndOf="@+id/textView30" />
+        android:layout_toEndOf="@+id/textView30"
+        android:textColor="@color/writing"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -237,7 +249,8 @@
         android:id="@+id/d3"
         android:layout_alignTop="@+id/textView32"
         android:layout_toRightOf="@+id/textView32"
-        android:layout_toEndOf="@+id/textView32" />
+        android:layout_toEndOf="@+id/textView32"
+        android:textColor="@color/writing"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -247,7 +260,8 @@
         android:id="@+id/d4"
         android:layout_above="@+id/textView24"
         android:layout_toRightOf="@+id/textView33"
-        android:layout_toEndOf="@+id/textView33" />
+        android:layout_toEndOf="@+id/textView33"
+        android:textColor="@color/writing"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -257,7 +271,8 @@
         android:id="@+id/d5"
         android:layout_alignTop="@+id/textView34"
         android:layout_alignLeft="@+id/d6"
-        android:layout_alignStart="@+id/d6" />
+        android:layout_alignStart="@+id/d6"
+        android:textColor="@color/writing"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -267,7 +282,8 @@
         android:id="@+id/d6"
         android:layout_below="@+id/textView26"
         android:layout_toRightOf="@+id/textView35"
-        android:layout_toEndOf="@+id/textView35" />
+        android:layout_toEndOf="@+id/textView35"
+        android:textColor="@color/writing"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -302,14 +318,15 @@
 
     <Chronometer
         android:id="@+id/chronometer1"
-        android:textColor="#4169E1"
+        android:textColor="@color/writing"
         android:textSize="35dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Chronometer"
         android:layout_below="@+id/textView29"
         android:layout_alignLeft="@+id/textView15"
-        android:layout_alignStart="@+id/textView15" />
+        android:layout_alignStart="@+id/textView15"
+        />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -317,9 +334,11 @@
         android:layout_height="wrap_content"
         android:text="Start"
         android:id="@+id/startC"
-        android:layout_alignTop="@+id/chronometer1"
-        android:layout_toRightOf="@+id/textView18"
-        android:layout_toEndOf="@+id/textView18" />
+        android:background= "@color/greyButton"
+        android:textColor="@color/white"
+        android:layout_below="@+id/textView29"
+        android:layout_alignStart="@+id/d6"
+        android:layout_toRightOf="@+id/textView10" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -327,9 +346,11 @@
         android:layout_height="wrap_content"
         android:text="stop"
         android:id="@+id/stopC"
+        android:background= "@color/greyButton"
+        android:textColor="@color/white"
         android:layout_alignTop="@+id/startC"
-        android:layout_toRightOf="@+id/d3"
-        android:layout_toEndOf="@+id/d3" />
+        android:layout_alignStart="@+id/textView16"
+        android:layout_toRightOf="@+id/textView38" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -337,8 +358,39 @@
         android:layout_height="wrap_content"
         android:text="restart"
         android:id="@+id/restartC"
+        android:background= "@color/greyButton"
+        android:textColor="@color/white"
         android:layout_alignTop="@+id/stopC"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_toRightOf="@+id/textView42" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="x"
+        android:id="@+id/textView10"
+        android:layout_alignBottom="@+id/chronometer1"
+        android:layout_toRightOf="@+id/chronometer1"
+        android:layout_toEndOf="@+id/chronometer1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="x"
+        android:id="@+id/textView38"
+        android:layout_alignBottom="@+id/chronometer1"
+        android:layout_toRightOf="@+id/startC"
+        android:layout_toEndOf="@+id/d4" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="x"
+        android:id="@+id/textView42"
+        android:layout_alignBottom="@+id/stopC"
+        android:layout_toRightOf="@+id/stopC"
+        android:layout_toEndOf="@+id/d3" />
 
 </RelativeLayout>
